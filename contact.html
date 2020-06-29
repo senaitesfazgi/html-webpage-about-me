@@ -45,20 +45,47 @@
             <li>PHP</li>
         </ul>
         </header>
-        <form action ="">
+        <!-- forms are used for submitting data from a user to a server.
+        The "action " attribute determines which page the data willl be sent to
+        The "method attribute is determines whether the data will be stored in the URL or sent securely.
+            The "Get" method will store the data in the URL meaning if the URL is sent to somebody, they will have the 
+        smae exact page, as their URL will send the same data to the server as the original request.
+            The "POST" method will submit the data behind the scene-->
+        <form action ="index.html" method="POST">
+
+        <!-- 
+        The label element is used kind of like a prompt for a form element. 
+        The "for" attribute will tie the prompt to a form element by its ID.
+      -->
 
             <label for="name">Please enter your name</label>
-            <input id = "name" type="text">
-            
+            <input id = "name" name="name" type="text">
+        <!--The input element is used -->
             <br />
 
-            <label for="email">Please enter your email</label>
-            <input id = "email" type="text">
+            <label for="password">Please enter your password</label>
+            <input id = "password" name="password" type="password">
             
             <br />
+            <!-- I have labled this section with a paragraph because there is no singular element to tie a labl to.-->
+            <p>Please select your relation</p>
+            <!--
+                Radio button groups are determined by the name atribute. You cannot have multiple radio buttons selected with a group
+                The value atribute will determine what data is sent under the name when the form is submitted 
+                without a "value" attribute it will send the data on.
+                the "id" attirbute here fnctions simiarly to above to, uniquely identiyfying the specific element 
+                By marking one radio button as "checked =" we ensure that the form cannot be submitted (without HTML editting) with no button
+            -->
+            <label for="coworker">Co-Worker</label>
+            <input id = "Corworker" name="relation" value="Coworker" type="radio">
+            <label for="exstudent">Ex-Student</label>
+            <input id = "exstudent" name="relation" value="exstudent" type="radio">
+            <label for="Other">Other</label>
+            <input id = "Other" name="relation" value="Other" type="radio">
+            <label for="Other">Other</label>
 
             <label for="message">Please leave us a message</label>
-            <textarea id="message"></textarea>
+            <textarea id="message" name="message"></textarea>
 
             <br />
 
