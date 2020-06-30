@@ -6,12 +6,32 @@ header{
 
 }
 main{
-    background-color: blueviolet;
+    background-color: chartreuse;
 
 }
 footer{
     background-color: cyan;
 }
-footer p{
-    background-color: darkgoldenrod;
+
+body>footer>p{
+    background-color: orange;
 }
+
+footer p{
+    background-color: yellow;
+}
+
+.photo{
+    border: 2px solid black;
+}
+
+#turbines{
+    border: 3px solid red
+main{
+        background-color: chartreuse;
+}
+
+main > p{
+    font-size: 32pt;
+}
+

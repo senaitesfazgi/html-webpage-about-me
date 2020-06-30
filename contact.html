@@ -1,150 +1,156 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-    <head>
-    <!--This is not visible in your webpage-->
-    <title>Contact|Senai Tesfazgi</title>
+  <head>
+    <title>Contact | Warren Uhrich</title>
 
-    <!--Set the character set, so the browser knows which character set should -->
-
-    <!--For modern responsive-->
+    <!-- Set the character set, so the browser knows which character set should be loaded and valid for this webpage. -->
     <meta charset="UTF-8">
-    <meta name= "viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--Meta Data-->
-    <meta name= "description" content="A website about Senai Tesfazgi.">
-    <meta name= "author" content= "Warren Uhrich">
-    <!--Styles-->
-    <!--The "defer" attribute will cause this script to wait until th body is loaded before executing 
-    important from DOM/ element manipulation from scripts)-->
-    <link rel ="stylesheet" type="text/css" href="CSS/main.css">
-    <!--scripts-->
+    <!-- For modern responsive web development: -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Meta Data: -->
+    <meta name="description" content="A website about Warren Uhrich.">
+    <meta name="author" content="Warren Uhrich">
+
+    <!-- Style(s): -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <!-- Script(s): -->
+    <!-- defer attribute will cause this script to wait until the body is loaded before executing (important for DOM / element manipulation by scripts) -->
     <script src="js/scripts.js" type="text/javascript" defer></script>
-        
-    </head>
-    
-    <body>
-        <header>
-        
-        <h1>Contact</h1>
+  </head>
+  <body class="contact">
+    <header>
+      <h1>Contact</h1>
+      <nav><!-- Navigation. -->
         <h2>Navigation</h2>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a><!--Anchor element(Hyperlink.)--></li>
-                <li><a href="contact.html">Contact</a><!--Anchor element(Hyperlink.)--></li>
-            </ul>
-            
-        </nav><!--navigation-->
-    
-        <h2>Skills</h2>
-        <p>
-            Here are some of my skills
-        </p>
-        <ul> <!--Unordered list-->
-            <li>HTML5</li><!--List item the only element allowed directly inside <ul> and <ol>) -->
-            <li>CSS3</li>
-            <li>PHP</li>
+        <ul>
+          <li><a href="index.html">Home</a><!-- Anchor element (hyperlink.) --></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
-        </header>
-        <main>
-        <!-- forms are used for submitting data from a user to a server.
-        The "action " attribute determines which page the data willl be sent to
-        The "method attribute is determines whether the data will be stored in the URL or sent securely.
-            The "Get" method will store the data in the URL meaning if the URL is sent to somebody, they will have the 
-        smae exact page, as their URL will send the same data to the server as the original request.
-            The "POST" method will submit the data behind the scene-->
-        <form action ="index.html" method="POST">
+      </nav>
+    </header>
+    <main>
+      <div class="mask">
+      <!-- 
+        Forms are used for submitting data from a user to the server.
+        The "action" attribute determines which page the data will be sent to.
+        The "method" attribute determines whether the data will be stored in the URL or sent securely.
+          -The "GET" method will store the data in the URL, meaning if the URL is sent to somebody, they will have the
+          same exact page, as their URL will sent the same data to the server as the original request.
+          -The "POST" method will submit the data behind the scenes, so if the URL is copied, none of the data
+          will be included.
+      -->
+      <form action="contact.html" method="GET">
+        <!-- 
+          The label element is used kind of like a prompt for a form element. 
+          The "for" attribute will tie the prompt to a form element by its ID.
+        -->
+        <label for="name">Please enter your name:</label>
+        <!--
+          The input element is used for several types of form fields including:
+            -Basic one line text ("text")
+            -Checkboxes ("checkbox")
+            -Radio buttons ("radio")
+            -Submit button ("submit")
+          The type of element rendered is determined by the "type" attribute.
+          The "id" attribute is used to globally identify an element on a page (for CSS / JS) as well as tie it to a label.
+          The "name" attribute is used to determine what the field's data will be referred to when it is submitted to the server.
+        -->
+        <input id="name" name="name" type="text">
+
+        <!-- The br (break) element is used to create a line break, but it's usually better to do this with CSS once you know how. -->
+        <br />
+
+        <!-- Type of "password" is the same as "text" but it will star out the content. This will NOT hide the content in form submissions. -->
+        <label for="password">Please enter your password:</label>
+        <input id="password" name="password" type="password">
+
+        <br />
+
+        <!-- I've labeled this section with a paragraph because there is no singular element to tie a label to. -->
+        <p>Please select your relation:</p>
+        <!--
+          Radio button "groups" are determined by the "name" attribute. You cannot have multiple radio buttons selected within a group.
+          The "value" attribute will determine what data is sent under the "name" when the form is submitted.
+          Without a "value" attribute, it will send the data 'on'.
+          The "id" attribute here functions similarly to above, uniquely identifying one specific element.
+          By marking one radio button as "checked" we ensure that the form cannot be submitted (without HTML editting) with no button selected.
+        -->
+        <input id="coworker" name="relation" value="coworker" type="radio">
+        <label for="coworker">Co-Worker</label>
+        <input id="exstudent" name="relation" value="exstudent" type="radio">
+        <label for="exstudent">Ex-Student</label>
+        <input id="other" name="relation" value="other" type="radio" checked>
+        <label for="other">Other</label>
+
+        <br />
 
         <!-- 
-        The label element is used kind of like a prompt for a form element. 
-        The "for" attribute will tie the prompt to a form element by its ID.
-      -->
+          Checkboxes are like radio buttons, except you can have multiple - or no - options selected.
+          Aside from that difference, the structure of the element is very similar, with the attributes serving
+          the same purposes. 
+        -->
+        <p>Please select all that apply:</p>
+        <input id="programming" name="programming" value="programming" type="checkbox">
+        <label for="programming">I like programming</label>
+        <input id="drawing" name="drawing" value="drawing" type="checkbox">
+        <label for="drawing">I like drawing</label>
+        <input id="swimming" name="swimming" value="swimming" type="checkbox">
+        <label for="swimming">I like swimming</label>
 
-            <label for="name">Please enter your name</label>
-            <input id = "name" name="name" type="text">
-        <!--The input element is used -->
-            <br />
+        <br />
 
-            <label for="password">Please enter your password</label>
-            <input id = "password" name="password" type="password">
-            
-            <br />
-            <!-- I have labled this section with a paragraph because there is no singular element to tie a labl to.-->
-            <p>Please select your relation</p>
-            <!--
-                Radio button groups are determined by the name atribute. You cannot have multiple radio buttons selected with a group
-                The value atribute will determine what data is sent under the name when the form is submitted 
-                without a "value" attribute it will send the data on.
-                the "id" attirbute here fnctions simiarly to above to, uniquely identiyfying the specific element 
-                By marking one radio button as "checked =" we ensure that the form cannot be submitted (without HTML editting) with no button
-            -->
-            <label for="coworker">Co-Worker</label>
-            <input id = "Corworker" name="relation" value="Coworker" type="radio">
-            <label for="exstudent">Ex-Student</label>
-            <input id = "exstudent" name="relation" value="exstudent" type="radio">
-            <label for="Other">Other</label>
-            <input id = "Other" name="relation" value="Other" type="radio">
-            <label for="Other">Other</label>
+        <!-- 
+          Selects (drop-down lists) serve a somewhat similar function to radio buttons, but conserve space for larger lists.
+          They allow you to select one option from a list.
+          The value of the selected option will be passed under the "name" attribute of the parent select.
+        -->
+        <label for="province">Please select your province: </label>
+        <select name="province" id="province">
+          <option value="AB">Alberta</option>
+          <option value="BC">British Columbia</option>
+          <option value="MB">Manitoba</option>
+          <option value="NB">New Brunswick</option>
+          <option value="NL">Newfoundland and Labrador</option>
+          <option value="NS">Nova Scotia</option>
+          <option value="ON">Ontario</option>
+          <option value="PE">Prince Edward Island</option>
+          <option value="QC">Quebec</option>
+          <option value="SK">Saskatchewan</option>
+          <option value="NT">Northwest Territories</option>
+          <option value="NU">Nunavut</option>
+          <option value="YT">Yukon</option>
+        </select>
 
-            <label for="message">Please leave us a message</label>
-            <textarea id="message" name="message"></textarea>
+        <br />
 
-            <br />
-            <!--Checkboxes are radio buttons,except you can have multiple - or no options selected-->
-            <p>Please select all that apply</p>
-            <input id = "programming" name="allThatApply" value="programming" type="checkbox">
-            <label for="programming">I like progrmming</label>
-            <input id = "drawing" name="allThatApply" value="drawing" type="checkbox">
-            <label for="drawing">I like drawing</label>
-            <input id = "swimming" name="allThatApply" value="swimming" type="checkbox">
-            <label for="swimming">I like swimming</label>
+        <!-- 
+          A textarea element is essentially a multi-line 'input type="text"' element.
+          It will add a scrollbar when the content exceeeds its visual size.
+          By default, the text area can be resized by the user. This can be disabled with CSS.
+        -->
+        <label for="message">Please leave us a message:</label>
+        <textarea id="message" name="message"></textarea>
 
-            <br />
-            <label for="province">Please select your province</label>
-            <select name="province" id="province">
-                <option value="AB">Alberta</option>
-                <option value="BC">British Columbia</option>
-                <option value="MB">Manitoba</option>
-                <option value="NB">New Brunswick</option>
-                <option value="NL">Newfoundland and Labrador</option>
-                <option value="NS">Nova Scotia</option>
-                <option value="ON">Ontario</option>
-                <option value="PE">Prince Edward Island</option>
-                <option value="QC">Quebec</option>
-                <option value="SK">Saskatchewan</option>
-                <option value="NT">Northwest Territories</option>
-                <option value="NU">Nunavut</option>
-                <option value="YT">Yukon</option>
-            </selct>
-        </form>
-        <h2>My favourite picture</h2>
-        <p>
-            I would like to share with each of you, my very favourite 
-            picture! It is an illustration featuring wind turbines.
-            Very cool, check it out below
-        </p>
-        <figure>
-            <!-- src is the lication of the image -->
-            <!--alt is "alternate text" to describ the image-->
-            <!--title is a pop up tool tip, for when you hover over -->
-            <img src="img/wind-turbine-illustration.jpg" alt="A blue illustration
-             of wind turbines" title ="A blue illustration of a wind turbine">
-            <figcaption>
-                illusstration credited to:
-                <!--target =_blank make the link open in a new tab (leaving the original tab open)-->
-                <a href="https://pixabay.com/users/rdaudt-7418264/" target="_blank" title="click here to view the original author ">
-                    Ardaut
-                </a>
-            </figcaption>
-        </figure>
-        <footer>
-            <h2>Footer</h2>
-            <p>
-                &copy; Copyright 2020 TECHCareer;
-                All Rights Reserved
-            </p>
-        </main>
-        </footer>
+        <br />
 
-    </body>
-
+        <!-- 
+          The submit button will submit the form to the "action" attribute in the form element.
+          The text in the button can be determined by the "value" attribute.
+        -->
+        <input type="submit" value="Submit Me!">
+      </form>
+    </div>
+    </main>
+    <footer>
+      <h2>Footer</h2>
+      <!-- In our contact page, our copyright is not inside of a div, meaning it does satisfy "body>footer>p". Therefore it is orange. -->
+      <p>
+        &copy; Copyright 2020 TECHCareers;
+        All Rights Reserved
+      </p>
+    </footer>
+  </body>
 </html>
